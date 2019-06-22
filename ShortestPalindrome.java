@@ -23,7 +23,7 @@ public class ShortestPalindrome {
 		String mid = str.substring(0, a);
 		System.out.println("mid "+mid);
 		String shortestPalindrome = starting + mid + ending;
-		
+		System.out.println("Shortest Palindrome is :-"+shortestPalindrome);
 		}
 
 }
