@@ -1,4 +1,3 @@
-package wipBackEnd;
 
 import java.util.Scanner;
 
