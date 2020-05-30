@@ -11,17 +11,18 @@ public class SopraConsoleApp {
 
 	public static void showMainMenu() {
 		final Scanner option = new Scanner(System.in);
-		int count = 1;
 		int deletedTaskCount = 1;
 		SopraConsoleAppFunc singletaskObj = new SopraConsoleAppFunc();
+		int count = singletaskObj.getHashMapFromTextFile();
 		try{
 			while (true) {
 				System.out.println("\n++++++++++++ TO DO LIST APP ++++++++++++\n");
 				System.out.println("1. Enter a single Task");
 				System.out.println("2. Enter Multiple Tasks");
 				System.out.println("3. Show All the Tasks");
-				System.out.println("4. Delete the Task");
-				System.out.println("5. Track Delete Task");
+				System.out.println("4. Mark Task Completed");
+				System.out.println("5. Delete the Task");
+				System.out.println("6. Track Delete Task");
 				System.out.println("\n++++++++++++ Please Enter the Choice ++++++++++++\n");
 				switch(option.nextInt()) {
 				case 1:
@@ -38,10 +39,15 @@ public class SopraConsoleApp {
 					singletaskObj.listTask();					
 					break;
 				case 4:
+					System.out.println("\n*************** Mark Task Completed***************\n");
+					//singletaskObj = new SopraConsoleAppFunc();
+					singletaskObj.markTaskCompleted();					
+					break;					
+				case 5:
 					System.out.println("\n*************** Delete Task ***************\n");
 					singletaskObj.deleteTask();
 					break;
-				case 5:
+				case 6:
 					System.out.println("\n*************** Track Deleted Task ***************\n");
 					singletaskObj.trackDeletedTask();
 					break;
