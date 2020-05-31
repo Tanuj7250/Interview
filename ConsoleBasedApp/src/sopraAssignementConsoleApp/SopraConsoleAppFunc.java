@@ -12,7 +12,7 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeMap;
 
-public class SopraConsoleAppFunc {
+public class SopraConsoleAppFunc implements SopraConsoleAppInterface{
 
 	TreeMap<Integer, String> taskMap = new TreeMap<Integer, String>();
 	TreeMap<Integer, String> deletedTaskMap = new TreeMap<Integer, String>();
@@ -23,6 +23,9 @@ public class SopraConsoleAppFunc {
 		BufferedReader br = null;
 		try{
 			File file = new File(path);
+			if (!file.exists()) {
+				file.createNewFile();
+			}
 			br = new BufferedReader( new FileReader(file) );
 			String line = null;
 			while ( (line = br.readLine()) != null ){

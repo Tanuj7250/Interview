@@ -12,7 +12,7 @@ public class SopraConsoleApp {
 	public static void showMainMenu() {
 		final Scanner option = new Scanner(System.in);
 		int deletedTaskCount = 1;
-		SopraConsoleAppFunc singletaskObj = new SopraConsoleAppFunc();
+		SopraConsoleAppInterface singletaskObj = new SopraConsoleAppFunc();
 		int count = singletaskObj.getHashMapFromTextFile();
 		try{
 			while (true) {
